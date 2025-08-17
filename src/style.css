@@ -1,5 +1,5 @@
 :root {
-  --pixel-size: 6;
+  --pixel-size: 10;
 }
 
 * {
@@ -13,8 +13,8 @@ body {
 }
 
 .character {
-  width: calc(96px * var(--pixel-size));
-  height: calc(96px * var(--pixel-size));
+  width: calc(32px * var(--pixel-size));
+  height: calc(32px * var(--pixel-size));
   overflow: hidden;
   position: absolute;
   bottom: 0;
@@ -22,7 +22,7 @@ body {
 
 .run_spritesheet {
   animation: moveSpriteSheet 1s steps(16) infinite;
-  width: calc(1536px * var(--pixel-size));
+  width: calc(610px * var(--pixel-size));
 }
 
 .pixelart {
