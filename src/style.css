@@ -17,7 +17,7 @@ body {
   height: calc(32px * var(--pixel-size));
   overflow: hidden;
   position: absolute;
-  bottom: calc(32px * var(--pixel-size));
+  bottom: 128px;
 }
 
 .run_spritesheet {
@@ -45,7 +45,7 @@ body {
   }
 
   to {
-    background-position: -288px 0;
+    background-position: -256px 0;
   }
 }
 
@@ -54,9 +54,9 @@ body {
   left: 0;
   bottom: 0;
   width: 100%;
-  height: calc(32px * var(--pixel-size));
+  height: 128px;
   background-image: url('../assets/autumn_forest_2d_pixel_art/Tileset/grass_single.png');
-  background-size: 96px;
+  background-size: 128px;
   background-repeat: repeat-x;
   z-index: 10;
   animation: scrollGround 1s linear infinite;
