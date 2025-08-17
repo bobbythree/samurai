@@ -1,5 +1,6 @@
 :root {
   --pixel-size: 10;
+  --parallax-speed: 20s;
 }
 
 * {
@@ -8,8 +9,44 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: #96ffc1;
+.game_container {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 100px;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.parallax_layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-size: contain;
+  background-repeat: repeat-x;
+}
+
+.bg3 {
+  background-image: url('../assets/autumn_forest_2d_pixel_art/Background/3.png');
+  transform: translateZ(-9px) scale(2.5);
+  background-repeat: repeat-x;
+  z-index: 1;
+}
+
+.bg2 {
+  background-image: url('../assets/autumn_forest_2d_pixel_art/Background/2.png');
+  background-repeat: repeat-x;
+  transform: translateZ(-6px) scale(2.0);
+  z-index: 2;
+}
+
+.bg1 {
+  background-image: url('../assets/autumn_forest_2d_pixel_art/Background/1.png');
+  background-repeat: repeat-x;
+  transform: translateZ(-3px) scale(1.5);
+  z-index: 3;
 }
 
 .character {
@@ -18,6 +55,7 @@ body {
   overflow: hidden;
   position: absolute;
   bottom: 128px;
+  z-index: 5;
 }
 
 .run_spritesheet {
@@ -27,6 +65,20 @@ body {
 
 .pixelart {
   image-rendering: pixelated;
+}
+
+.ground_grass {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 128px;
+  background-image: url('../assets/autumn_forest_2d_pixel_art/Tileset/grass_single.png');
+  background-size: 128px;
+  background-repeat: repeat-x;
+  z-index: 10;
+  transform: translateZ(0);
+  animation: scrollGround 0.5s linear infinite;
 }
 
 @keyframes moveSpriteSheet {
@@ -47,17 +99,4 @@ body {
   to {
     background-position: -256px 0;
   }
-}
-
-.ground_grass {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 128px;
-  background-image: url('../assets/autumn_forest_2d_pixel_art/Tileset/grass_single.png');
-  background-size: 128px;
-  background-repeat: repeat-x;
-  z-index: 10;
-  animation: scrollGround 1s linear infinite;
 }
