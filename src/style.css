@@ -1,3 +1,7 @@
+:root {
+  --pixel-size: 4;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,14 +13,14 @@ body {
 }
 
 .character {
-  width: 96px;
-  height: 96px;
-  background-color: wheat;
+  width: calc(96px * var(--pixel-size));
+  height: calc(96px * var(--pixel-size));
   overflow: hidden;
 }
 
 .run_spritesheet {
   animation: moveSpriteSheet 1s steps(16) infinite;
+  width: calc(1536px * var(--pixel-size));
 }
 
 @keyframes moveSpriteSheet {
