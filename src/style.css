@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #96ffc1;
+}
+
+.character {
+  width: 96px;
+  height: 96px;
+  background-color: wheat;
+  overflow: hidden;
+}
+
+.run_spritesheet {
+  animation: moveSpriteSheet 1s steps(16) infinite;
+}
+
+@keyframes moveSpriteSheet {
+  from {
+    transform: translate3d(0px, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
