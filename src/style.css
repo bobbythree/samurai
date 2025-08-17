@@ -1,5 +1,5 @@
 :root {
-  --pixel-size: 4;
+  --pixel-size: 6;
 }
 
 * {
@@ -21,6 +21,10 @@ body {
 .run_spritesheet {
   animation: moveSpriteSheet 1s steps(16) infinite;
   width: calc(1536px * var(--pixel-size));
+}
+
+.pixelart {
+  image-rendering: pixelated;
 }
 
 @keyframes moveSpriteSheet {
