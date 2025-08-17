@@ -8,9 +8,9 @@ const bg3Duplicate = document.querySelector('.bg3.duplicate');
 
 // Get all parallax elements into an array
 const parallaxLayers = [
-  { element: bg1, duplicate: bg1Duplicate, speed: 0.5, z: -3, scale: 1.5 },
-  { element: bg2, duplicate: bg2Duplicate, speed: 0.3, z: -6, scale: 2.0 },
-  { element: bg3, duplicate: bg3Duplicate, speed: 0.1, z: -9, scale: 2.5 }
+  { element: bg1, duplicate: bg1Duplicate, speed: 2.0, z: -3, scale: 1.5 },
+  { element: bg2, duplicate: bg2Duplicate, speed: 1.0, z: -6, scale: 2.0 },
+  { element: bg3, duplicate: bg3Duplicate, speed: 0.5, z: -9, scale: 2.5 }
 ];
 
 // bg starting positions
