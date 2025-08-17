@@ -38,3 +38,26 @@ body {
     transform: translate3d(-100%, 0, 0);
   }
 }
+
+@keyframes scrollGround {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: calc(-96px * var(--pixel-size)) 0;
+  }
+}
+
+.ground_grass {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: calc(32px * var(--pixel-size));
+  background-image: url('../assets/autumn_forest_2d_pixel_art/Tileset/grass_single.png');
+  background-size: 96px;
+  background-repeat: repeat-x;
+  z-index: 10;
+  animation: scrollGround 5s linear infinite;
+}
