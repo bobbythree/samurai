@@ -16,6 +16,8 @@ body {
   width: calc(96px * var(--pixel-size));
   height: calc(96px * var(--pixel-size));
   overflow: hidden;
+  position: absolute;
+  bottom: 0;
 }
 
 .run_spritesheet {
