@@ -3,8 +3,11 @@ import { Player } from './Player.js';
 
 export class Game {
   constructor() {
-    this.animationFrame = null;
-    this.player = new Player();
+    this.animationFrameId = null;
+    this.player = new Player(
+      document.querySelector('.character_img'),
+      document.querySelector('.ground_grass')
+    );
     this.parallax = new ParallaxController();
     this.keyPressed = {};
     this.bindEvents();
@@ -19,15 +22,15 @@ export class Game {
     //this.parallax.update(this.keyPressed);
 
     //request next frame
-    this.animationFrame = requestAnimationFrame(this.gameLoop.bind(this));
+    this.animationFrameId = requestAnimationFrame(this.gameLoop.bind(this));
   }
   start() {
     this.gameLoop();
   }
   stop() {
-    if (this.animationFrame) {
-      cancelAnimationFrame(this.animationFrame);
-      this.animationFrame = null;
+    if (this.animationFrameId) {
+      cancelAnimationFrame(this.animationFrameId);
+      this.animationFrameId = null;
     }
   }
 }

@@ -1,7 +1,7 @@
 export class Player {
-  constructor() {
-    this.characterImg = document.querySelector('.character_img');
-    this.groundGrass = document.querySelector('.ground_grass');
+  constructor(character, ground) {
+    this.characterImg = character;
+    this.groundGrass = ground;
   }
   update(keyPressed) {
     if (keyPressed['ArrowRight']) {
