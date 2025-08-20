@@ -63,8 +63,8 @@
   transform: translateZ(0);
 }
 
-.ground_animate {
-  animation: scrollGround 0.5s linear infinite;
+.grass_animate {
+  animation: scrollGrass 0.5s linear infinite;
 }
 
 .character {
@@ -103,7 +103,7 @@
   }
 }
 
-@keyframes scrollGround {
+@keyframes scrollGrass {
   from {
     background-position: 0 0;
   }

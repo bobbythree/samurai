@@ -1,7 +1,7 @@
 import { ParallaxController } from './ParallaxController.js';
 import { Player } from './Player.js';
 
-class Game {
+export class Game {
   constructor() {
     this.animationFrame = null;
     this.player = new Player(
@@ -26,5 +26,11 @@ class Game {
   }
   start() {
     this.gameLoop();
+  }
+  stop() {
+    if (this.animationFrame) {
+      cancelAnimationFrame(this.animationFrame);
+      this.animationFrame = null;
+    }
   }
 }
