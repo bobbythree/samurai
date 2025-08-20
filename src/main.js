@@ -1,3 +1,5 @@
+import { handleKeyDown, handleKeyUp, run } from './modules/gameControls.js'
+
 // Get all parallax layers (original and duplicates)
 const bg1 = document.querySelector('.bg1:not(.duplicate)');
 const bg1Duplicate = document.querySelector('.bg1.duplicate');
@@ -47,3 +49,7 @@ function animate() {
   requestAnimationFrame(animate);
 }
 //animate();
+
+window.addEventListener('keydown', handleKeyDown);
+window.addEventListener('keyup', handleKeyUp);
+

@@ -77,8 +77,11 @@
 }
 
 .run_spritesheet {
-  animation: moveSpriteSheet 1s steps(16) infinite;
   width: calc(512px * var(--pixel-size));
+}
+
+.run_animate {
+  animation: moveSpriteSheet 1s steps(16) infinite;
 }
 
 .idle_spritesheet {
