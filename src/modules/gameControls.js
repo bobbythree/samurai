@@ -27,17 +27,22 @@ export function handleKeyDown(e) {
   keyPressed[e.key] = true;
 }
 
-export function handleKeyUp() {
+export function handleKeyUp(e) {
   keyPressed[e.key] = false;
 }
 
 export function run() {
   if (keyPressed['ArrowRight']) {
     groundGrass.classList.add('ground_animate');
+    characterImg.classList.add('run_spritesheet');
+    characterImg.classList.add('run_animate');
+    characterImg.classList.remove('idle_spritesheet');
     characterImg.src = '/assets/samurai/Sprites/RUN.png';
     runParallax();
   } else {
+    characterImg.classList.add('idle_spritesheet')
     groundGrass.classList.remove('ground_animate');
+    characterImg.classList.remove('run_spritesheet', 'run_animate');
     characterImg.src = '/assets/samurai/Sprites/IDLE.png';
   }
 }
