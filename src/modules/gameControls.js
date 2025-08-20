@@ -1,15 +1,13 @@
 const groundGrass = document.querySelector('.ground_grass');
 const characterImg = document.querySelector('.character_img');
 
-
+//parallax elements
 const bg1 = document.querySelector('.bg1:not(.duplicate)');
 const bg1Duplicate = document.querySelector('.bg1.duplicate');
 const bg2 = document.querySelector('.bg2:not(.duplicate)');
 const bg2Duplicate = document.querySelector('.bg2.duplicate');
 const bg3 = document.querySelector('.bg3:not(.duplicate)');
 const bg3Duplicate = document.querySelector('.bg3.duplicate');
-
-const keyPressed = {};
 
 // Get all parallax elements into an array
 const parallaxLayers = [
@@ -23,6 +21,16 @@ let pos1 = 0;
 let pos2 = 0;
 let pos3 = 0;
 
+//assign width of bg elements
+let firstLayerWidth = bg1.offsetWidth;
+let secondLayerWidth = bg2.offsetWidth;
+let thirdLayerWidth = bg3.offsetWidth;
+
+//keypress logic
+//keypress state
+const keyPressed = {};
+
+//keypress handlers
 export function handleKeyDown(e) {
   keyPressed[e.key] = true;
 }
@@ -31,7 +39,8 @@ export function handleKeyUp(e) {
   keyPressed[e.key] = false;
 }
 
-export function run() {
+
+export function characterRun() {
   if (keyPressed['ArrowRight']) {
     groundGrass.classList.add('ground_animate');
     characterImg.classList.add('run_spritesheet');
@@ -47,11 +56,6 @@ export function run() {
   }
 }
 
-let firstLayerWidth = bg1.offsetWidth;
-let secondLayerWidth = bg2.offsetWidth;
-let thirdLayerWidth = bg3.offsetWidth;
-
-// Update positions based on their respective speeds
 export function runParallax() {
   pos1 -= parallaxLayers[0].speed;
   pos2 -= parallaxLayers[1].speed;
