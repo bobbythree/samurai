@@ -19,7 +19,7 @@ export class Game {
   //main game loop
   gameLoop() {
     this.player.update(this.keyPressed);
-    //this.parallax.update(this.keyPressed);
+    this.parallax.update(this.keyPressed);
 
     //request next frame
     this.animationFrameId = requestAnimationFrame(this.gameLoop.bind(this));
