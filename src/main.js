@@ -1,9 +1,9 @@
-import { handleKeyDown, handleKeyUp, run, runParallax } from './modules/gameControls.js';
+import { handleKeyDown, handleKeyUp, characterRun } from './modules/gameControls.js';
 
 
 function animate() {
   // Use a different variable for clarity
-  run();
+  characterRun();
 
   requestAnimationFrame(animate);
 }
