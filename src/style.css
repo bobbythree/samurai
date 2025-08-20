@@ -1,5 +1,5 @@
 :root {
-  --pixel-size: 10;
+  --pixel-size: 12;
   --parallax-speed: 20s;
 }
 
@@ -16,6 +16,7 @@
   perspective: 100px;
   transform-style: preserve-3d;
   position: relative;
+  overflow: hidden;
 }
 
 .parallax_layer {
@@ -49,24 +50,6 @@
   z-index: 3;
 }
 
-.character {
-  width: calc(32px * var(--pixel-size));
-  height: calc(32px * var(--pixel-size));
-  overflow: hidden;
-  position: absolute;
-  bottom: 128px;
-  z-index: 5;
-}
-
-.run_spritesheet {
-  animation: moveSpriteSheet 1s steps(16) infinite;
-  width: calc(610px * var(--pixel-size));
-}
-
-.pixelart {
-  image-rendering: pixelated;
-}
-
 .ground_grass {
   position: absolute;
   left: 0;
@@ -78,7 +61,36 @@
   background-repeat: repeat-x;
   z-index: 10;
   transform: translateZ(0);
+}
+
+.ground_animate {
   animation: scrollGround 0.5s linear infinite;
+}
+
+.character {
+  width: calc(32px * var(--pixel-size));
+  height: calc(32px * var(--pixel-size));
+  overflow: hidden;
+  position: absolute;
+  bottom: 70px;
+  z-index: 5;
+}
+
+.run_spritesheet {
+  width: calc(512px * var(--pixel-size));
+}
+
+.run_animate {
+  animation: moveSpriteSheet 1s steps(16) infinite;
+}
+
+.idle_spritesheet {
+  animation: moveSpriteSheet 1s steps(10) infinite;
+  width: calc(320px * var(--pixel-size));
+}
+
+.pixelart {
+  image-rendering: pixelated;
 }
 
 @keyframes moveSpriteSheet {
