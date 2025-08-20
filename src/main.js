@@ -1,14 +1,6 @@
-import { handleKeyDown, handleKeyUp, characterRun } from './modules/gameControls.js';
+import { Game } from './Classes/Game.js';
 
-
-function animate() {
-  // Use a different variable for clarity
-  characterRun();
-
-  requestAnimationFrame(animate);
-}
-animate();
-
-window.addEventListener('keydown', handleKeyDown);
-window.addEventListener('keyup', handleKeyUp);
-
+document.addEventListener('DOMContentLoaded', () => {
+  const game = new Game();
+  game.start();
+})
