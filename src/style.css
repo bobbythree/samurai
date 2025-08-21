@@ -25,8 +25,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-size: contain;
-  background-repeat: repeat-x;
+  background-size: cover;
 }
 
 .bg3 {
@@ -63,8 +62,8 @@
   transform: translateZ(0);
 }
 
-.ground_animate {
-  animation: scrollGround 0.5s linear infinite;
+.grass_animate {
+  animation: scrollGrass 0.5s linear infinite;
 }
 
 .character {
@@ -103,7 +102,7 @@
   }
 }
 
-@keyframes scrollGround {
+@keyframes scrollGrass {
   from {
     background-position: 0 0;
   }
