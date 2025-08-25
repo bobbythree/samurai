@@ -78,6 +78,14 @@
   animation: moveSpriteSheet 1s steps(16) infinite;
 }
 
+.attack_spritesheet {
+  width: calc(224 * var(--pixel-size));
+}
+
+.attack_animate {
+  animation: moveSpritesheet 1s steps(7) infinite;
+}
+
 .idle_spritesheet {
   animation: moveSpriteSheet 1s steps(10) infinite;
   width: calc(320px * var(--pixel-size));
