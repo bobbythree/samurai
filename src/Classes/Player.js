@@ -2,12 +2,11 @@ export class Player {
   constructor(character) {
     this.characterImg = character;
     this.isAttacking = false;
-    this.currentState = 'idle'; // Add a state variable to track the current action
-    this.animationEndHandler = null;
+    this.currentState = 'idle';
   }
 
   update(keyPressed) {
-    // Attack action has the highest priority and can interrupt other actions
+    // Attack has the highest priority. We use `!this.isAttacking` to prevent a new attack from starting.
     if (keyPressed[' '] && !this.isAttacking) {
       this.isAttacking = true;
       this.currentState = 'attack';
@@ -16,11 +15,12 @@ export class Player {
       this.characterImg.classList.add('attack_spritesheet', 'attack_animate');
       this.characterImg.src = '../../assets/samurai/Sprites/ATTACK.png';
 
-      // Use a one-time event listener to handle the transition back
-      this.characterImg.addEventListener('animationend', () => {
+      const attackDuration = 300;
+
+      setTimeout(() => {
         this.isAttacking = false;
 
-        // Revert to the last state based on current key presses
+        // Revert to the appropriate state based on current key presses
         if (keyPressed['ArrowRight']) {
           this.currentState = 'run';
           this.characterImg.classList.remove('attack_spritesheet', 'attack_animate', 'idle_spritesheet');
@@ -32,8 +32,9 @@ export class Player {
           this.characterImg.classList.add('idle_spritesheet');
           this.characterImg.src = '../../assets/samurai/Sprites/IDLE.png';
         }
-      }, { once: true });
-      return; // Exit early to prevent other actions from overriding the attack
+      }, attackDuration);
+
+      return; // Exit early to prevent other actions
     }
 
     // Do not allow other state changes if an attack is in progress
@@ -43,14 +44,14 @@ export class Player {
 
     // Now handle other states
     if (keyPressed['ArrowRight']) {
-      if (this.currentState !== 'run') { // Only change state if it's different
+      if (this.currentState !== 'run') {
         this.currentState = 'run';
         this.characterImg.classList.remove('idle_spritesheet', 'attack_spritesheet', 'attack_animate');
         this.characterImg.classList.add('run_spritesheet', "run_animate");
         this.characterImg.src = '../../assets/samurai/Sprites/RUN.png';
       }
     } else {
-      if (this.currentState !== 'idle') { // Only change state if it's different
+      if (this.currentState !== 'idle') {
         this.currentState = 'idle';
         this.characterImg.classList.remove('run_spritesheet', 'run_animate', 'attack_spritesheet', 'attack_animate');
         this.characterImg.classList.add('idle_spritesheet');
