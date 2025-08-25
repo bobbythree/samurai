@@ -1,5 +1,5 @@
 export class Player {
-  constructor(character, ground) {
+  constructor(character) {
     this.characterImg = character;
   }
   update(keyPressed) {

@@ -4,10 +4,7 @@ import { Player } from './Player.js';
 export class Game {
   constructor() {
     this.animationFrameId = null;
-    this.player = new Player(
-      document.querySelector('.character_img'),
-      document.querySelector('.ground_grass')
-    );
+    this.player = new Player(document.querySelector('.character_img'));
     this.parallax = new ParallaxController();
     this.keyPressed = {};
     this.bindEvents();
