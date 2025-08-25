@@ -6,7 +6,15 @@ export class ParallaxController {
   getParallaxLayers() {
     const layers = [
       {
-        element: document.querySelector('.bg1:not(.duplicate)'),
+        element: document.querySelector('.ground_grass'),
+        duplicate: document.querySelector('.ground_grass.duplicate'),
+        speed: 10.0,
+        z: 0,
+        scale: 1.0,
+        width: 0
+      },
+      {
+        element: document.querySelector('.bg1'),
         duplicate: document.querySelector('.bg1.duplicate'),
         speed: 2.0,
         z: -3,
@@ -14,7 +22,7 @@ export class ParallaxController {
         width: 0
       },
       {
-        element: document.querySelector('.bg2:not(.duplicate)'),
+        element: document.querySelector('.bg2'),
         duplicate: document.querySelector('.bg2.duplicate'),
         speed: 1.0,
         z: -6,
@@ -22,7 +30,7 @@ export class ParallaxController {
         width: 0
       },
       {
-        element: document.querySelector('.bg3:not(.duplicate)'),
+        element: document.querySelector('.bg3'),
         duplicate: document.querySelector('.bg3.duplicate'),
         speed: 0.5,
         z: -9,

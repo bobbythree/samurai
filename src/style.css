@@ -59,11 +59,6 @@
   background-size: 128px;
   background-repeat: repeat-x;
   z-index: 10;
-  transform: translateZ(0);
-}
-
-.grass_animate {
-  animation: scrollGrass 0.5s linear infinite;
 }
 
 .character {
@@ -99,15 +94,5 @@
 
   to {
     transform: translate3d(-100%, 0, 0);
-  }
-}
-
-@keyframes scrollGrass {
-  from {
-    background-position: 0 0;
-  }
-
-  to {
-    background-position: -256px 0;
   }
 }
