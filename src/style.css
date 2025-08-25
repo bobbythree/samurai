@@ -83,7 +83,7 @@
 }
 
 .attack_animate {
-  animation: moveAttack 1s steps(7) 1;
+  animation: moveAttack 0.3s steps(7) 1;
 }
 
 .idle_spritesheet {
