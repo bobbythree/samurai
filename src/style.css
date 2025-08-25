@@ -79,11 +79,11 @@
 }
 
 .attack_spritesheet {
-  width: calc(224 * var(--pixel-size));
+  width: calc(224px * var(--pixel-size));
 }
 
 .attack_animate {
-  animation: moveSpritesheet 1s steps(7) infinite;
+  animation: moveAttack 1s steps(7) 1;
 }
 
 .idle_spritesheet {
@@ -96,6 +96,16 @@
 }
 
 @keyframes moveSpriteSheet {
+  from {
+    transform: translate3d(0px, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes moveAttack {
   from {
     transform: translate3d(0px, 0, 0);
   }
